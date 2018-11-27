@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+import javax.swing.JLabel;
 
 public class InitialMenu {
 	
@@ -19,11 +20,11 @@ public class InitialMenu {
 	
 	public void buildGUI() {
 		frame= new JFrame("GUI");
-		frame.setLayout(new BorderLayout());
+		frame.getContentPane().setLayout(new BorderLayout());
 		
 		addPanels();
 		addOptionsPanelElements();
-		frame.setSize(400, 100);
+		frame.setSize(498, 84);
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
@@ -32,7 +33,7 @@ public class InitialMenu {
 	private void addPanels() {
 		optionsPanel = new JPanel();
 		optionsPanel.setLayout(new FlowLayout());
-		frame.add(optionsPanel, BorderLayout.NORTH);
+		frame.getContentPane().add(optionsPanel, BorderLayout.NORTH);
 	}
 	
 	private void addOptionsPanelElements() {
@@ -42,6 +43,10 @@ public class InitialMenu {
 	}
 	
 	private void emailButton() {
+		{
+			JLabel lblEscolhaOServio = new JLabel("Escolha o servi\u00E7o a utilizar: ");
+			optionsPanel.add(lblEscolhaOServio);
+		}
 		JButton mail = new JButton("Mail");
 		optionsPanel.add(mail);
 		/*searchButton.addActionListener(new ActionListener() {

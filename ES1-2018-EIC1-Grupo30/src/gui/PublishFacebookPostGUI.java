@@ -16,7 +16,7 @@ import javax.swing.SwingConstants;
 
 import net.miginfocom.swing.MigLayout;
 
-public class PublishTwitterGUI {
+public class PublishFacebookPostGUI {
 
 	private JFrame frame;
 
@@ -27,7 +27,7 @@ public class PublishTwitterGUI {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PublishTwitterGUI window = new PublishTwitterGUI();
+					PublishFacebookPostGUI window = new PublishFacebookPostGUI();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,7 +39,7 @@ public class PublishTwitterGUI {
 	/**
 	 * Create the application.
 	 */
-	public PublishTwitterGUI() {
+	public PublishFacebookPostGUI() {
 		initialize();
 	}
 
@@ -72,7 +72,7 @@ public class PublishTwitterGUI {
 			}
 		});
 		
-		JLabel lblNewLabel = new JLabel("Publish a tweet here!");
+		JLabel lblNewLabel = new JLabel("Publish a Facebook post here!");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
 		panel.add(lblNewLabel, "cell 1 0,alignx center");
 		

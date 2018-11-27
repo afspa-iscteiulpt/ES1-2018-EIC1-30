@@ -1,4 +1,4 @@
-# ES1-2018-EIC1-Grupo30
+# ES1-2018-EIC1-30
 Novo repositório
 
 Grupo 30:

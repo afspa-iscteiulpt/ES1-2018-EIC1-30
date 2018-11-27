@@ -19,12 +19,12 @@ public class InitialMenu {
 	}
 	
 	public void buildGUI() {
-		frame= new JFrame("GUI");
+		frame= new JFrame("Menu Inicial");
 		frame.getContentPane().setLayout(new BorderLayout());
 		
 		addPanels();
 		addOptionsPanelElements();
-		frame.setSize(498, 84);
+		frame.setSize(498, 117);
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
@@ -34,6 +34,27 @@ public class InitialMenu {
 		optionsPanel = new JPanel();
 		optionsPanel.setLayout(new FlowLayout());
 		frame.getContentPane().add(optionsPanel, BorderLayout.NORTH);
+		{
+			JPanel panel = new JPanel();
+			frame.getContentPane().add(panel, BorderLayout.SOUTH);
+			panel.setLayout(new FlowLayout());
+			{
+				JLabel lblLer = new JLabel("Ler:  ");
+				panel.add(lblLer);
+			}
+			{
+				JButton button = new JButton("Mail");
+				panel.add(button);
+			}
+			{
+				JButton button = new JButton("Twitter");
+				panel.add(button);
+			}
+			{
+				JButton button = new JButton("Facebook");
+				panel.add(button);
+			}
+		}
 	}
 	
 	private void addOptionsPanelElements() {
@@ -44,7 +65,7 @@ public class InitialMenu {
 	
 	private void emailButton() {
 		{
-			JLabel lblEscolhaOServio = new JLabel("Escolha o servi\u00E7o a utilizar: ");
+			JLabel lblEscolhaOServio = new JLabel("Publicar ou Enviar:  ");
 			optionsPanel.add(lblEscolhaOServio);
 		}
 		JButton mail = new JButton("Mail");

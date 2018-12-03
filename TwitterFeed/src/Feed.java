@@ -16,7 +16,9 @@ public class Feed {
 	private final int max = 5;
 	private static int counter = 0;
 	private static int counterTotal = 0;
-
+	private static TwitterFactory tf;
+	private static Twitter twitter;
+	
 	public static void main(String[] args) {
 
 		try {
@@ -30,19 +32,12 @@ public class Feed {
 					.setOAuthConsumerSecret("h5jHurKOcUcxu3a2uWxXznCnf0b4Hwvps4DS3xVOEJsiQI2m4X")
 					.setOAuthAccessToken("1054735667387944961-BR0ryCvwvrBh8XTJYIDQYKDs4gpwNB")
 					.setOAuthAccessTokenSecret("nbQoXokjdaIZyQIt4kA0jzg9SGLvzGV3ODLwvZylqCIo3");
-			TwitterFactory tf = new TwitterFactory(cb.build());
-			Twitter twitter = tf.getInstance();
-			Post(twitter, "wtf");
+			 tf = new TwitterFactory(cb.build());
+			 twitter = tf.getInstance();
+//			 long id=  1067477199232614405L;
+//			Fav( id);
 
-			/**
-			 * mostra os tweets na timeline do utlizador caso os autores nao
-			 * sejam null
-			 */
-			ReadTimeline(twitter);
-			/**
-			 * mostra o numero de tweets que a app le
-			 * 
-			 */
+			
 			System.out.println("-------------\nNº of Results: " + counter + "/" + counterTotal);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -58,10 +53,10 @@ public class Feed {
 	 *            mensagem em status
 	 * 
 	 */
-	private static void Post(Twitter twitter, String newStatus) {
+	private static void Post( String newStatus) {
 
 		try {
-
+			
 			Status status = twitter.updateStatus(newStatus);
 			System.out.println("Successfully updated the status to [" + status.getText() + "].");
 			// System.exit(0);
@@ -75,7 +70,7 @@ public class Feed {
 	/**
 	 * mostra os tweets na timeline do utlizador caso os autores nao sejam null
 	 */
-	private static void ReadTimeline(Twitter twitter) {
+	private static void ReadTimeline() {
 		List<Status> statuses = null;
 
 		try {
@@ -98,7 +93,7 @@ public class Feed {
 		}
 	}
 
-	private static void Retweet(Twitter twitter, Long tweetId) {
+	private static void Retweet(Long tweetId) {
 		try {
 			twitter.retweetStatus(tweetId);
 		} catch (TwitterException e) {
@@ -107,7 +102,7 @@ public class Feed {
 		}
 	}
 
-	private static void Fav(Twitter twitter, Long tweetId) {
+	private static void Fav( long tweetId) {
 		try {
 			Status status = twitter.createFavorite(tweetId);
 
@@ -116,7 +111,7 @@ public class Feed {
 			e.printStackTrace();
 		}
 	}
-	public String reply(Twitter twitter, Long tweetId, String message ) throws TwitterException {
+	public String reply( Long tweetId, String message ) throws TwitterException {
         Status status = twitter.showStatus(tweetId);
         Status reply = twitter.updateStatus(new StatusUpdate(" @" + status.getUser().getScreenName() + " "+ message).inReplyToStatusId(status.getId()));
     return Long.toString(reply.getId());

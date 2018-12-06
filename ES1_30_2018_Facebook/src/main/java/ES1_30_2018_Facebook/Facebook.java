@@ -2,9 +2,6 @@ package ES1_30_2018_Facebook;
 
 import java.util.List;
 import java.util.Scanner;
-
-import javax.swing.plaf.synth.SynthSpinnerUI;
-
 import com.restfb.Connection;
 import com.restfb.DefaultFacebookClient;
 import com.restfb.FacebookClient;

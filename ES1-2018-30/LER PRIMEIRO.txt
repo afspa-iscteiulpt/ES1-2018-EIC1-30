@@ -1,0 +1,9 @@
+ATENÇÃO!!!
+
+Apenas os packages gui e mainApp correspondem à versao de entrega.
+Devido a vários problemas inesperados, não foi possível colocar as GUI's a trabalhar de forma devida.
+Estávamos a contar ter mais algum tempo visto a data do nosso sprint ser no final da proxima semana e termos
+feito a apresentação apenas terça dia 27 de novembro. o que nos tirou dois dias de tempo, nao permitindo que
+conseguissemos corrigir todos os erros e melhorar todos os aspetos referidos no segundo sprint.
+Tentámos até ao último minuto corrigir tantos erros quanto possível, mas não conseguimos corrigi-los a todos.
+O restantes packages correspondem à tentativa de realização da GUI da App através do javaFX ainda que sem sucesso. 

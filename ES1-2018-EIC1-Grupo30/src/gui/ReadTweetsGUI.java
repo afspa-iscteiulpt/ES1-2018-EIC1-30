@@ -1,21 +1,15 @@
 package gui;
 
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.List;
+import java.awt.Panel;
+import java.awt.TextArea;
 
 import javax.swing.JFrame;
-import java.awt.CardLayout;
-import java.awt.GridLayout;
-import javax.swing.JPanel;
-import javax.swing.JSplitPane;
-import java.awt.List;
-import java.awt.TextArea;
-import java.awt.FlowLayout;
-import java.awt.BorderLayout;
-import javax.swing.JList;
-import java.awt.Label;
-import java.awt.Panel;
 import javax.swing.JLabel;
-import java.awt.Font;
+import javax.swing.JPanel;
 
 public class ReadTweetsGUI {
 

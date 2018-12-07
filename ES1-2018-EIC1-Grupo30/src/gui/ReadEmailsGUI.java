@@ -1,25 +1,31 @@
 package gui;
 
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.List;
+import java.awt.Panel;
+import java.awt.TextArea;
 
 import javax.swing.JFrame;
-import java.awt.CardLayout;
-import java.awt.GridLayout;
-import javax.swing.JPanel;
-import javax.swing.JSplitPane;
-import java.awt.List;
-import java.awt.TextArea;
-import java.awt.FlowLayout;
-import java.awt.BorderLayout;
-import javax.swing.JList;
-import java.awt.Label;
-import java.awt.Panel;
 import javax.swing.JLabel;
-import java.awt.Font;
+import javax.swing.JPanel;
+import javax.swing.JSeparator;
+import javax.swing.BoxLayout;
+import java.awt.Component;
+import javax.swing.Box;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import javax.swing.JTextField;
+import java.awt.FlowLayout;
+import javax.swing.JTextPane;
 
 public class ReadEmailsGUI {
 
 	private JFrame frame;
+	private JTextField textFieldTo;
+	private JTextField textFieldSubject;
 
 	/**
 	 * Launch the application.
@@ -49,27 +55,59 @@ public class ReadEmailsGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 703, 446);
+		frame.setBounds(100, 100, 703, 522);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(0, 0, 685, 399);
-		frame.getContentPane().add(panel);
-		panel.setLayout(new BorderLayout(0, 0));
+		JPanel panel1 = new JPanel();
+		panel1.setBounds(0, 0, 685, 399);
+		frame.getContentPane().add(panel1);
+		panel1.setLayout(new BorderLayout(0, 0));
 		
 		TextArea textArea = new TextArea();
-		panel.add(textArea, BorderLayout.EAST);
+		panel1.add(textArea, BorderLayout.EAST);
 		
 		List list = new List();
-		panel.add(list, BorderLayout.CENTER);
+		panel1.add(list, BorderLayout.CENTER);
 		
-		Panel panel_1 = new Panel();
-		panel.add(panel_1, BorderLayout.NORTH);
+		Panel panel2 = new Panel();
+		panel1.add(panel2, BorderLayout.NORTH);
 		
-		JLabel lblSelecioneOEmail = new JLabel("Selecione o email \u00E0 esquerda e leia o email \u00E0 direita");
-		lblSelecioneOEmail.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		panel_1.add(lblSelecioneOEmail);
+		JLabel label1 = new JLabel("Selecione o email \u00E0 esquerda e leia o email \u00E0 direita");
+		label1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		panel2.add(label1);
+		
+		JPanel panel3 = new JPanel();
+		panel1.add(panel3, BorderLayout.SOUTH);
+		panel3.setLayout(new BoxLayout(panel3, BoxLayout.X_AXIS));
+		
+		JPanel panel4 = new JPanel();
+		panel3.add(panel4);
+		panel4.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
+		JLabel LabelTo = new JLabel("From: ");
+		panel4.add(LabelTo);
+		
+		textFieldTo = new JTextField();
+		panel4.add(textFieldTo);
+		textFieldTo.setColumns(20);
+		
+		JPanel panel5 = new JPanel();
+		panel3.add(panel5);
+		
+		JLabel LabelSubject = new JLabel("Subject: ");
+		panel5.add(LabelSubject);
+		
+		textFieldSubject = new JTextField();
+		panel5.add(textFieldSubject);
+		textFieldSubject.setColumns(20);
+		
+		JLabel lblNewLabel = new JLabel("Message: ");
+		lblNewLabel.setBounds(33, 408, 59, 16);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JTextPane textPane = new JTextPane();
+		textPane.setBounds(93, 408, 556, 54);
+		frame.getContentPane().add(textPane);
 	}
-
 }

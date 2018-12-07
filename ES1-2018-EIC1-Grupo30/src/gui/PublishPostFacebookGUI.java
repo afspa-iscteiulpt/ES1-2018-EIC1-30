@@ -96,5 +96,6 @@ public class PublishPostFacebookGUI {
 		panel.add(btnNewButton, "cell 1 4,alignx right");
 		frame.getContentPane().setLayout(groupLayout);
 	}
-
+	
+	
 }
